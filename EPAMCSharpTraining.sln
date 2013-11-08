@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayReverse", "ArrayRevers
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntArrayTransformation", "IntArrayTransformation\IntArrayTransformation.csproj", "{B613A026-9D10-4141-8634-908EF5A03A72}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringWordsLowerUpper", "StringWordsLowerUpper\StringWordsLowerUpper.csproj", "{653ECEBD-8623-46F5-9339-9B96D96B7FB8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{B613A026-9D10-4141-8634-908EF5A03A72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B613A026-9D10-4141-8634-908EF5A03A72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B613A026-9D10-4141-8634-908EF5A03A72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{653ECEBD-8623-46F5-9339-9B96D96B7FB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{653ECEBD-8623-46F5-9339-9B96D96B7FB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{653ECEBD-8623-46F5-9339-9B96D96B7FB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{653ECEBD-8623-46F5-9339-9B96D96B7FB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
