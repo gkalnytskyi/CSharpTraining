@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LastMonthDay", "LastMonthDa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSortDates", "FileSortDates\FileSortDates.csproj", "{EDBDBCC7-1533-4C54-AE24-619D5C74C1D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionarySubstituteString", "DictionarySubstituteString\DictionarySubstituteString.csproj", "{15D23287-BE71-493B-85F4-7BFCFAD3B173}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -79,6 +81,10 @@ Global
 		{EDBDBCC7-1533-4C54-AE24-619D5C74C1D0}.Debug|x86.Build.0 = Debug|x86
 		{EDBDBCC7-1533-4C54-AE24-619D5C74C1D0}.Release|x86.ActiveCfg = Release|x86
 		{EDBDBCC7-1533-4C54-AE24-619D5C74C1D0}.Release|x86.Build.0 = Release|x86
+		{15D23287-BE71-493B-85F4-7BFCFAD3B173}.Debug|x86.ActiveCfg = Debug|x86
+		{15D23287-BE71-493B-85F4-7BFCFAD3B173}.Debug|x86.Build.0 = Debug|x86
+		{15D23287-BE71-493B-85F4-7BFCFAD3B173}.Release|x86.ActiveCfg = Release|x86
+		{15D23287-BE71-493B-85F4-7BFCFAD3B173}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
