@@ -8,12 +8,6 @@ namespace EmployeeOrganizationChartTests
     public class EmployeeTests
     {
         [Test]
-        public void Employee_Position()
-        {
-            Employee.Position.Should().Be(EmployeePosition.Employee);
-        }
-
-        [Test]
         public void Employee_Status()
         {
             // Arrange
@@ -34,6 +28,26 @@ namespace EmployeeOrganizationChartTests
             emp1.Equals(emp2).Should().Be(true);
         }
 
+        [Test]
+        public void Employee_not_equals_Manager()
+        {
+            var firstName = "John";
+            var lastName = "Smith";
+            var employee = new Employee(firstName, lastName);
+            var manager = new Manager(firstName, lastName);
 
+            employee.Equals(manager).Should().Be(false);
+        }
+
+        [Test]
+        public void Employee_not_equals_Top_Manager()
+        {
+            var firstName = "John";
+            var lastName = "Smith";
+            var employee = new Employee(firstName, lastName);
+            var topManager = new TopManager(firstName, lastName);
+
+            employee.Equals(topManager).Should().Be(false);
+        }
     }
 }

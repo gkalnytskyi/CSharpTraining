@@ -11,21 +11,15 @@ namespace EmployeeOrganizationChart
     {
         #region Fields and Properties
 
-        protected List<Employee> _Subordinates;
+        protected HashSet<Employee> _Subordinates;
 
         #endregion
 
         #region Ctor
-
-        static Manager()
-        {
-            Position = EmployeePosition.Manager;
-        }
-
         public Manager(string firstName, string lastName)
             : base(firstName, lastName)
         {
-            _Subordinates = new List<Employee>();
+            _Subordinates = new HashSet<Employee>();
         }
 
         #endregion
@@ -34,20 +28,13 @@ namespace EmployeeOrganizationChart
 
         public Manager AddSubordinate(Employee emp)
         {
-            if (_Subordinates.Contains(emp))
-            {
-                throw new ArgumentException("Manager already manages this subordinate");
-            }
             _Subordinates.Add(emp);
             return this;
         }
 
         public Manager RemoveSubordinate(Employee emp)
         {
-            if (_Subordinates.Contains(emp))
-            {
-                _Subordinates.Remove(emp);
-            }
+            _Subordinates.Remove(emp);
 
             return this;
         }
@@ -60,7 +47,7 @@ namespace EmployeeOrganizationChart
         public override string Status()
         {
             var sb = new StringBuilder();
-            sb.AppendLine(base.Status());
+            sb.AppendLine(ToString());
             sb.AppendLine("Suboridinates:");
             foreach (var employee in _Subordinates)
             {
@@ -72,6 +59,12 @@ namespace EmployeeOrganizationChart
         #endregion
 
         #region Overriden and Interface Methods
+
+        public override string ToString()
+        {
+            return FullName + ": Manager";
+        }
+
         public bool Equals(Manager other)
         {
             if (other == null)
@@ -83,8 +76,7 @@ namespace EmployeeOrganizationChart
             if (this.GetHashCode() != other.GetHashCode())
                 return false;
 
-            if (base.Equals(other) &&
-                Enumerable.SequenceEqual(this._Subordinates, other._Subordinates))
+            if (base.Equals(other) && this._Subordinates.SetEquals(other._Subordinates))
                 return true;
 
             return false;

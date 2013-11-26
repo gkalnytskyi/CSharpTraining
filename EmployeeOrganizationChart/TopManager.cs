@@ -10,12 +10,9 @@ namespace EmployeeOrganizationChart
     class TopManager : Manager, IEquatable<TopManager>
     {
         #region Ctor
-        static TopManager()
-        {
-            Position = EmployeePosition.TopManager;
-        }
 
         public TopManager(string firstName, string lastName) : base(firstName, lastName) { }
+        
         #endregion
 
         #region Methods
@@ -29,12 +26,17 @@ namespace EmployeeOrganizationChart
 
         #region Overriden and Interface Methods
 
+        public override string ToString()
+        {
+            return FullName + ": Top Manager" ;
+        }
+
         public bool Equals(TopManager other)
         {
             return Equals((Manager)other);
         }
 
-        public bool Equals(Object obj)
+        public override bool Equals(Object obj)
         {
             if (obj == null)
                 return false;
@@ -45,6 +47,12 @@ namespace EmployeeOrganizationChart
             else
                 return Equals(objTopManager);
         }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
         #endregion
     }
 }

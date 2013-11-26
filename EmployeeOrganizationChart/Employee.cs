@@ -4,13 +4,6 @@ using System.Runtime.CompilerServices;
 [assembly: InternalsVisibleTo("EmployeeOrganizationChartTests")]
 namespace EmployeeOrganizationChart
 {
-    enum EmployeePosition
-    {
-        Employee = 0,
-        Manager,
-        TopManager,
-    }
-
     class Employee : IEquatable<Employee>
     {
         #region Fields and Properties
@@ -18,17 +11,10 @@ namespace EmployeeOrganizationChart
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
         public string FullName { get { return LastName + ", " + FirstName; } }
-
-        public static EmployeePosition Position { get; protected set; }
         
         #endregion
 
         #region Ctor
-        
-        static Employee()
-        {
-            Position = EmployeePosition.Employee;
-        }
 
         public Employee(string firstName, string lastName)
         {
@@ -52,9 +38,10 @@ namespace EmployeeOrganizationChart
         #endregion
 
         #region Overriden and Interface methods
+        
         public override string ToString()
         {
-            return FullName + ": " + Position;
+            return FullName + ": Employee";
         }
         
         public bool Equals(Employee other)
@@ -92,8 +79,9 @@ namespace EmployeeOrganizationChart
 
         public override int GetHashCode()
         {
- 	         return (LastName+FirstName).ToUpper().GetHashCode() ^ Position.GetHashCode();
+ 	         return (LastName+FirstName).ToUpper().GetHashCode();
         }
+
         #endregion
     }
 }
