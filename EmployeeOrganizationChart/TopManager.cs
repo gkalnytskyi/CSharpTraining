@@ -4,55 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("EmployeeOrganizationChartTests")]
 namespace EmployeeOrganizationChart
 {
-    class TopManager : Manager, IEquatable<TopManager>
+    class TopManager : Manager
     {
-        #region Ctor
-
-        public TopManager(string firstName, string lastName) : base(firstName, lastName) { }
-        
+        #region CTOR
+        public TopManager(string lastname, string firstname) : base(lastname, firstname) { }
         #endregion
 
-        #region Methods
-
-        public override string Status()
+        #region Functions
+        public override string ShortStatus()
         {
-            return new StringBuilder().AppendLine("Top Manager").Append(base.Status()).ToString();
+            return "Top Manager " + base.ShortStatus();
         }
-
-        #endregion
-
-        #region Overriden and Interface Methods
-
-        public override string ToString()
-        {
-            return FullName + ": Top Manager" ;
-        }
-
-        public bool Equals(TopManager other)
-        {
-            return Equals((Manager)other);
-        }
-
-        public override bool Equals(Object obj)
-        {
-            if (obj == null)
-                return false;
-
-            TopManager objTopManager = obj as TopManager;
-            if (objTopManager == null)
-                return false;
-            else
-                return Equals(objTopManager);
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
-
         #endregion
     }
 }
